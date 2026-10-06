@@ -189,6 +189,19 @@ footer a{color:#b9d3ce}
   .chart{height:230px;gap:8px}
   .bar span{font-size:11px}
 }
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.big{font-family:Fraunces,serif;font-size:clamp(44px,6vw,68px);color:var(--brand);line-height:1}
+.dark .big{color:var(--accent)}
+.k{font-size:15px;color:var(--muted);margin-top:8px}.dark .k{color:var(--dark-muted)}
+.k b{color:var(--ink);display:block;font-size:16px}.dark .k b{color:#fff}
+.mini{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.mini div{padding:22px;border:.5px solid var(--line);font-size:14px;color:var(--muted);min-height:110px}
+.mini b{display:block;color:var(--ink);font-family:Fraunces,serif;font-size:18px;margin-bottom:4px}
+.mini .us{background:var(--brand);color:#fff}.mini .us b{color:#fff}.mini .us{color:#cfe9e3}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.chart{height:240px}
+@media(max-width:900px){.three,.split{grid-template-columns:1fr}.split{gap:28px}}
 </style>
 </head>
 <body>
@@ -200,7 +213,7 @@ footer a{color:#b9d3ce}
       PawPrime
     </a>
     <div class="links">
-      <a href="#problem">Problem</a><a href="#why-now">Why now</a><a href="#model">Model</a><a href="#market">Market</a><a href="#financials">Financials</a><a href="#exit">Exit</a>
+      <a href="#why">Why now</a><a href="#model">Solution</a><a href="#numbers">Numbers</a><a href="#exit">Exit</a>
       <a class="btn" href="#ask">The ask</a>
     </div>
   </div>
@@ -210,252 +223,85 @@ footer a{color:#b9d3ce}
   <div class="wrap">
     <span class="eyebrow">Investor overview · Seed round</span>
     <h1>The one place Chewy and Petco cannot reach — <em>the pet’s living room.</em></h1>
-    <p class="sub">PawPrime is an AI-dispatched network of independent mobile vets and groomers — built to plug into a retailer’s pharmacy and Autoship, and to be acquired by one.</p>
-    <div class="cta">
-      <a class="btn btn-p" href="#ask">See the ask</a>
-      <a class="btn btn-g" href="#model">How it works</a>
-    </div>
+    <p class="sub">PawPrime is an AI-dispatched network of independent mobile vets and groomers, built to plug into a retailer’s pharmacy and Autoship — and to be acquired by one.</p>
+    <div class="cta"><a class="btn btn-p" href="#ask">See the ask</a><a class="btn btn-g" href="#why">Why now</a></div>
     <div class="stats">
-      <div class="stat"><b>$40B</b><span>U.S. veterinary services market, growing ≈5% a year</span></div>
-      <div class="stat"><b>$399.8M</b><span>What Chewy paid for 29 Modern Animal clinics (Apr 2026)</span></div>
-      <div class="stat"><b>~$6M</b><span>Cumulative funding to break-even in Year 3 (plan)</span></div>
-      <div class="stat"><b>$105M</b><span>Year-5 revenue target — ≈1.1% of serviceable market (plan)</span></div>
+      <div class="stat"><b>$40B</b><span>U.S. vet services market, +5%/yr</span></div>
+      <div class="stat"><b>$399.8M</b><span>Chewy’s 2026 Modern Animal acquisition</span></div>
+      <div class="stat"><b>Year 3</b><span>Planned break-even</span></div>
+      <div class="stat"><b>~$6M</b><span>Total funding to get there</span></div>
     </div>
   </div>
 </header>
 
-<section id="problem">
+<section id="why">
   <div class="wrap">
-    <span class="eyebrow">The problem</span>
-    <h2>Three parties, one missing touchpoint</h2>
-    <p class="lead">Every player in pet care solves part of the puzzle. Nobody has industrialised the visit inside the home — where the care decision is actually made.</p>
-    <div class="grid g3">
-      <div class="card"><span class="tag">Pet parents</span><h3>Care that needs a car ride.</h3><p>A carrier, a waiting room, anxiety — worst for cats, senior or anxious pets and multi-pet homes, the owners most likely to delay or skip care.</p></div>
-      <div class="card"><span class="tag">Independent providers</span><h3>No route, no engine.</h3><p>Mobile vets, techs and groomers can’t build route density, a booking engine or their own admin — while corporate roll-ups consolidate around them.</p></div>
-      <div class="card"><span class="tag">Retailers</span><h3>Everything but the visit.</h3><p>Chewy and Petco own products, pharmacy, Autoship and the customer relationship — but not the moment care happens inside the home.</p></div>
+    <span class="eyebrow">The opportunity</span>
+    <h2>Retailers own the product. Nobody owns the visit at home.</h2>
+    <p class="lead">Chewy and Petco hold the pharmacy, Autoship and the customer — but care is decided in the home, and independent vets have no engine to reach it. Timing is now:</p>
+    <div class="three">
+      <div class="card"><div class="big">$399.8M</div><div class="k"><b>Buyers are shopping</b>Chewy bought 29 clinics and says it wants “owned and asset-light.”</div></div>
+      <div class="card"><div class="big">Paused</div><div class="k"><b>Petco is capital-constrained</b>New hospital construction halted — it needs care capacity without capex.</div></div>
+      <div class="card"><div class="big">~76%</div><div class="k"><b>Vet supply is the limit</b>The U.S. will produce only ~76% of vets needed through 2032. Software, not buildings, adds capacity.</div></div>
     </div>
-    <div class="gap-callout"><b>The gap:</b> pet care is decided at a clinic or a website — when the pet, and the data, are in the home.</div>
-  </div>
-</section>
-
-<section id="why-now" class="bg2">
-  <div class="wrap">
-    <span class="eyebrow">Why now</span>
-    <h2>The window is open in 2026 — and closing</h2>
-    <p class="lead">Four forces converge on the home visit. The argument is timing — the constraint is people, not buildings.</p>
-    <div class="grid g4">
-      <div class="card"><span class="tag">01 · Market</span><div class="num">$165B</div><h3>Big and still growing.</h3><p>U.S. pet spend hit $158B in 2025 and projects to $165B in 2026; vet care &amp; products alone were $41B.</p><span class="src">APPA · March 2026</span></div>
-      <div class="card"><span class="tag">02 · Buyers</span><div class="num">$399.8M</div><h3>Buyers are shopping.</h3><p>Chewy closed Modern Animal — 29 clinics, 24/7 virtual care, 100k+ member families, &gt;$125M annualised revenue.</p><span class="src">Chewy · April 2026 · 10-Q</span></div>
-      <div class="card"><span class="tag">03 · Incumbent</span><div class="num">~300</div><h3>Petco is capital-constrained.</h3><p>About 300 in-store Vetco hospitals, but new hospital construction is paused — it needs care capacity without capex.</p><span class="src">Petco · 2025–2026</span></div>
-      <div class="card"><span class="tag">04 · Supply</span><div class="num">~76%</div><h3>Capacity is people.</h3><p>The U.S. will produce only ~76% of the veterinarians it needs through 2032. Brick-and-mortar can’t close that gap.</p><span class="src">AVMA / Industry · 2026</span></div>
-    </div>
-    <div class="sowhat"><b>So what:</b> a software layer that routes existing independent vets is the only way to add care capacity without construction — or hiring a national veterinary workforce.</div>
   </div>
 </section>
 
 <section id="model" class="dark">
   <div class="wrap">
     <span class="eyebrow">The solution</span>
-    <h2>Three assets, one ordering pipe</h2>
-    <p class="lead">We never hold stock. Every visit can queue a prescription or refill that — with consent — routes to the partner’s pharmacy.</p>
-    <div class="grid g3">
-      <div class="card"><span class="tag">Asset 01</span><h3>Provider network</h3><p>Independent mobile vets, techs and groomers, onboarded neighbourhood by neighbourhood. Independents — not employees. Closes the last-mile care gap no clinic can reach.</p></div>
-      <div class="card"><span class="tag">Asset 02</span><h3>AI engine</h3><p>Matching &amp; routing, teletriage intake, consumption forecasting and care-plan prompts. Scheduling as a product — turning provider hours into capacity that scales.</p></div>
-      <div class="card"><span class="tag">Asset 03</span><h3>Home health record</h3><p>A digital record built from visits, wearables and remote triage that predicts what each pet needs next — exactly what runs an Autoship business.</p></div>
+    <h2>A software layer that dispatches independent vets — and feeds the retailer’s pharmacy</h2>
+    <p class="lead">No inventory, no fleet, no clinics. Every visit can route a prescription or refill, with consent, to the partner.</p>
+    <div class="three">
+      <div class="card"><h3>Provider network</h3><p>Independent mobile vets and groomers, onboarded neighbourhood by neighbourhood.</p></div>
+      <div class="card"><h3>AI dispatch engine</h3><p>Matching, routing, teletriage and forecasting turn provider hours into scalable capacity.</p></div>
+      <div class="card"><h3>Home health record</h3><p>Predicts what each pet needs next — exactly what powers an Autoship business.</p></div>
     </div>
-    <div class="pipe">The ordering pipe · not an inventory</div>
-
-    <h3 style="font-size:28px;margin:64px 0 8px;color:#fff">One value loop. Each visit makes the next cheaper to earn.</h3>
-    <p class="lead" style="margin-bottom:24px">Four AI models power the loop — matching, triage, forecasting and care-plan prompts.</p>
-    <div class="loop" style="color:var(--ink)">
-      <div class="step"><i>1</i>Book<small>Owner books via PawPrime or partner app</small></div>
-      <div class="step"><i>2</i>Dispatch<small>AI matches provider &amp; routes the day</small></div>
-      <div class="step"><i>3</i>Visit<small>Exam at home; record updated</small></div>
-      <div class="step"><i>4</i>Route<small>Rx / refill queued to partner pharmacy</small></div>
-      <div class="step"><i>5</i>Predict<small>Forecast needs; queue Autoship &amp; next visit</small></div>
-    </div>
-  </div>
-</section>
-
-<section id="market">
-  <div class="wrap">
-    <span class="eyebrow">Market opportunity</span>
-    <h2>A big market — and a narrow wedge</h2>
-    <p class="lead">We are not claiming we will win the market — we are claiming a defensible, focused position.</p>
-    <div class="tam-wrap">
-      <div class="tam-nest" role="img" aria-label="Nested circles: TAM about 48 billion dollars, SAM about 9.6 billion, SOM year 5 about 105 million">
-        <div class="circ c1"><span>TAM</span><b>≈ $48B</b></div>
-        <div class="circ c2"><span>SAM</span><b>≈ $9.6B</b></div>
-        <div class="circ c3"><span>SOM · Y5</span><b>≈ $105M</b></div>
-      </div>
-      <ul class="defs">
-        <li><b>TAM · ≈ $48B</b>U.S. vet services (~$40B, +5%/yr) plus pet grooming (~$8B, within APPA’s $14.3B “other services”).</li>
-        <li><b>SAM · ≈ $9.6B</b>Home-addressable routine &amp; preventive care in the top 25 U.S. metros (≈20% of TAM).</li>
-        <li><b>SOM · ≈ $105M by Year 5</b>About 1.1% of SAM. The plan doesn’t require winning the market — only a slice of it.</li>
-        <li><b>The niche grows faster</b>In-home veterinary services: ~$1.65B (2024), ~9.2% CAGR.</li>
-      </ul>
-    </div>
-    <p style="font-size:12.5px;color:#8a9694;margin-top:14px">TAM/SAM are derived estimates, not third-party figures. Sources: APPA (Mar 2026), Chewy investor materials (Apr 2026), Mordor Intelligence, Dataintelo.</p>
   </div>
 </section>
 
 <section class="bg2" id="position">
-  <div class="wrap">
-    <span class="eyebrow">Positioning</span>
-    <h2>The empty quadrant</h2>
-    <p class="lead">Two axes. Every major player occupies three quadrants. The fourth — home care plus a real commerce engine — is empty.</p>
-    <div class="axis"><span>◀ Clinic / store</span><span>Care setting</span><span>The home ▶</span></div>
-    <div class="quad" style="margin-top:8px">
-      <div class="q"><h3>Chewy · Petco</h3><p>Owned clinics + Autoship + pharmacy — mature, well-paid, well understood.</p><small>Clinic · full commerce</small></div>
-      <div class="q us"><h3>PawPrime</h3><p>Home visits + the partner’s retail and pharmacy. Expensive for a retailer to build (they’re building clinics instead), impossible for a home-vet startup to fill.</p><small>Home · full commerce — empty</small></div>
-      <div class="q"><h3>Independent vet clinics</h3><p>The legacy market — many practices, fragmented, decoupled from ecommerce entirely.</p><small>Clinic · no commerce</small></div>
-      <div class="q"><h3>Rover · mobile groomers · home-vet startups</h3><p>Services without commerce: no Autoship, no pharmacy, no scale.</p><small>Home · no commerce</small></div>
-    </div>
-    <div class="axis"><span>▲ Full retail + pharmacy</span><span>Commerce engine</span><span>▼ None</span></div>
-
-    <div class="tblwrap" style="margin-top:44px">
-    <table class="tbl">
-      <thead><tr><th>Player</th><th>Where care happens</th><th>Commerce engine</th><th>Gap</th></tr></thead>
-      <tbody>
-        <tr><td>Chewy + Modern Animal</td><td>~47 clinics after the deal, plus 24/7 virtual care</td><td>Autoship + pharmacy · 21.7M active customers</td><td>No care in the home — clinics mature in 2–4 years</td></tr>
-        <tr><td>Petco</td><td>~300 in-store Vetco hospitals</td><td>1,378 stores · online · Petco Perks</td><td>New hospitals paused — capital-constrained</td></tr>
-        <tr><td>Rover (Blackstone)</td><td>Sitting and walking in the home</td><td>No health commerce</td><td>No vet care, no prescriptions</td></tr>
-        <tr><td>Home-vet startups</td><td>Home visits</td><td>None</td><td>No retail partner, no scale</td></tr>
-        <tr style="background:var(--accent-soft)"><td>PawPrime</td><td>Home visits, teletriage, telemedicine</td><td>The partner’s — by design</td><td>Built to close all four gaps</td></tr>
-      </tbody>
-    </table>
-    </div>
-  </div>
-</section>
-
-<section id="moat">
-  <div class="wrap">
-    <span class="eyebrow">Differentiation &amp; moat</span>
-    <h2>Four gaps we close — one moat that is not the app</h2>
-    <p class="lead">Some gaps are operational. One — the prescription gap — is regulatory, and we treat it as an advantage.</p>
-    <div class="grid g4">
-      <div class="card"><span class="tag">Gap 01 · Care setting</span><p>Neither Chewy nor Petco runs routine care in the home. We do.</p></div>
-      <div class="card"><span class="tag">Gap 02 · Commerce</span><p>Home-vet startups have no retail or pharmacy engine. We design around the partner’s.</p></div>
-      <div class="card"><span class="tag">Gap 03 · Capacity</span><p>Footprint grows slowly and Petco can’t fund new hospitals. Software scales instead.</p></div>
-      <div class="card"><span class="tag">Gap 04 · Regulatory</span><p>Eight states (incl. Georgia) require an in-person VCPR. The home exam unlocks every later refill.</p></div>
-    </div>
-    <h3 style="font-size:26px;margin:48px 0 18px">The moat — ranked, in honest order</h3>
-    <div class="grid g3">
-      <div class="card tier"><div class="t">1</div><div><h3>Route density</h3><p>Neighbourhood-by-neighbourhood supply coverage a buyer cannot buy quickly. <b>Hardest to build.</b></p></div></div>
-      <div class="card tier"><div class="t">2</div><div><h3>Provider loyalty</h3><p>Schedule control and dense routes keep independents on the platform.</p></div></div>
-      <div class="card tier"><div class="t">3</div><div><h3>Pet health record</h3><p>Compounds over time and feeds Autoship — the moat of data.</p></div></div>
-    </div>
-    <div class="honest">
-      <h3>The app is not the moat.</h3>
-      <p>Chewy valued Modern Animal’s technology at <b>$6.0M</b> of a ~$399.8M price. Buyers pay for relationships, footprint and fit — so we build the three things a buyer can’t buy cheaply. <span style="opacity:.7">Source: PPA allocation, Chewy Q2 FY2026 10-Q.</span></p>
-    </div>
-  </div>
-</section>
-
-<section class="bg2" id="revenue">
-  <div class="wrap">
-    <span class="eyebrow">Revenue model</span>
-    <h2>Capturing value — without selling product</h2>
-    <p class="lead">Five streams. No product margin, ever: replenishment margin is the buyer’s core business, so we never compete with it.</p>
-    <div class="tblwrap">
-    <table class="tbl">
-      <thead><tr><th>Stream</th><th>Who pays</th><th>How it works</th><th>Why a buyer values it</th></tr></thead>
-      <tbody>
-        <tr><td>Booking commission<span class="pill">15–20%</span></td><td>Provider (deducted from visit fee)</td><td>Take rate on each vet or grooming visit.</td><td>Proves demand and visit-level economics.</td></tr>
-        <tr><td>Care membership<span class="pill">$20 / mo</span></td><td>Pet parent</td><td>24/7 teletriage, member pricing, priority booking, annual plan.</td><td>Recurring revenue and retention — 100k+ member families came with Modern Animal.</td></tr>
-        <tr><td>Partner outcome fees<span class="pill">Per customer</span></td><td>Chewy or Petco</td><td>Per new customer, Autoship enrolment or Rx routed.</td><td>Paid only for outcomes the partner already measures.</td></tr>
-        <tr><td>Provider SaaS<span class="pill">Phase 2 · $300/mo</span></td><td>Provider</td><td>Routing, records and payment tools as a monthly plan.</td><td>Keeps providers on the platform.</td></tr>
-        <tr><td>Demand insights<span class="pill">Phase 3</span></td><td>Partner</td><td>Consented, aggregated forecasts of food, diet and Rx demand.</td><td>Feeds the partner’s own inventory planning.</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p style="font-size:13px;color:#8a9694;margin-top:12px">Pricing, take rate, membership and SaaS fees are planning inputs, not forecasts — to be validated in the pilot.</p>
-  </div>
-</section>
-
-<section id="economics">
-  <div class="wrap">
-    <span class="eyebrow">Unit economics</span>
-    <h2>The math that has to work</h2>
-    <p class="lead">Three units of scale. Each value is a planning input the pilot exists to confirm.</p>
-    <div class="grid g3 ue">
-      <div class="card"><span class="lbl">Unit 01 · One in-home visit</span><big>$34</big><span class="lbl">Contribution per visit</span>
-        <dl><div><dt>Service order value</dt><dd>$225</dd></div><div><dt>18% commission</dt><dd>$40.50</dd></div><div><dt>Variable cost</dt><dd>−$6.50</dd></div><div><dt>Net contribution</dt><dd>$34.00</dd></div></dl>
-        <p class="hook">Visits priced ~30% above clinic rates.</p></div>
-      <div class="card"><span class="lbl">Unit 02 · One active provider / month</span><big>$3,540</big><span class="lbl">Revenue to PawPrime</span>
-        <dl><div><dt>Visits / month</dt><dd>80</dd></div><div><dt>Commission</dt><dd>$3,240</dd></div><div><dt>Provider SaaS (phase 2)</dt><dd>$300</dd></div><div><dt>Annualised</dt><dd>~$42.5k</dd></div></dl>
-        <p class="hook">Provider keeps ~$14,760 / month — the recruiting hook.</p></div>
-      <div class="card"><span class="lbl">Unit 03 · One member / year</span><big>~4×</big><span class="lbl">LTV / CAC</span>
-        <dl><div><dt>Membership</dt><dd>$240 / yr</dd></div><div><dt>Annual retention</dt><dd>60–70%</dd></div><div><dt>CAC (partner-assisted)</dt><dd>~$120</dd></div><div><dt>Payback</dt><dd>~7–8 months</dd></div></dl>
-        <p class="hook">Expected member LTV ≈ $720.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="bg2" id="financials">
-  <div class="wrap">
-    <span class="eyebrow">Financial projections</span>
-    <h2>Five years — break-even in Year 3</h2>
-    <p class="lead">The headline isn’t the hundred million. It’s the six million — capital efficiency is the story.</p>
-    <div class="card">
-      <div class="chart" role="img" aria-label="Total revenue by year: Y1 1.13 million, Y2 4.82 million, Y3 16.83 million, Y4 45.54 million, Y5 105.33 million dollars">
-        <div class="col"><div class="bar" style="height:1.1%"><span>$1.1M</span></div><div class="y">Y1</div></div>
-        <div class="col"><div class="bar" style="height:4.6%"><span>$4.8M</span></div><div class="y">Y2</div></div>
-        <div class="col"><div class="bar" style="height:16%"><span>$16.8M</span></div><div class="y">Y3</div></div>
-        <div class="col"><div class="bar" style="height:43.2%"><span>$45.5M</span></div><div class="y">Y4</div></div>
-        <div class="col"><div class="bar" style="height:92%"><span>$105.3M</span></div><div class="y">Y5</div></div>
-      </div>
-      <p style="text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a9694;margin-top:14px;font-weight:700">Total revenue</p>
-    </div>
-    <div class="cwrap">
-      <div class="tblwrap">
-      <table class="tbl nums">
-        <thead><tr><th>Metric</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th></tr></thead>
-        <tbody>
-          <tr><td>Active providers</td><td>25</td><td>75</td><td>200</td><td>450</td><td>900</td></tr>
-          <tr><td>Visits (000s)</td><td>15</td><td>60</td><td>200</td><td>495</td><td>1,080</td></tr>
-          <tr><td>GMV</td><td>$3.4M</td><td>$13.7M</td><td>$46.4M</td><td>$116.3M</td><td>$257.0M</td></tr>
-          <tr><td>Total revenue</td><td>$1.13M</td><td>$4.82M</td><td>$16.83M</td><td>$45.54M</td><td>$105.33M</td></tr>
-          <tr><td>EBITDA</td><td class="neg">−$2.27M</td><td class="neg">−$3.37M</td><td class="pos">+$0.94M</td><td class="pos">+$9.60M</td><td class="pos">+$30.46M</td></tr>
-          <tr><td>EBITDA margin</td><td class="neg">−201%</td><td class="neg">−70%</td><td class="pos">+6%</td><td class="pos">+21%</td><td class="pos">+29%</td></tr>
-        </tbody>
-      </table>
-      </div>
-      <div class="callout">
-        <big>~$6M</big>
-        <p>Cumulative funding through break-even. No inventory, no fleet, no clinic build-out. Membership revenue overtakes commission by Year 4.</p>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">White space</span>
+      <h2>The one empty quadrant</h2>
+      <p class="lead" style="margin-bottom:24px">Every major player sits in clinics or in services without commerce. Home care with a real retail engine is open.</p>
+      <div class="three" style="grid-template-columns:repeat(3,1fr);gap:12px">
+        <div><div class="big" style="font-size:34px">$48B</div><div class="k">TAM</div></div>
+        <div><div class="big" style="font-size:34px">$9.6B</div><div class="k">SAM · top 25 metros</div></div>
+        <div><div class="big" style="font-size:34px">$105M</div><div class="k">Year-5 target · 1.1% of SAM</div></div>
       </div>
     </div>
-    <p style="font-size:13px;color:#8a9694;margin-top:12px">Assumption-based planning model — not a forecast.</p>
+    <div class="mini" role="img" aria-label="2x2 positioning: PawPrime is the only player in home care with full commerce">
+      <div><b>Chewy · Petco</b>Clinic + full commerce</div>
+      <div class="us"><b>PawPrime</b>Home + full commerce — empty</div>
+      <div><b>Independent clinics</b>Clinic, no commerce</div>
+      <div><b>Rover · home-vet startups</b>Home, no commerce</div>
+    </div>
   </div>
 </section>
 
-<section id="gtm">
+<section id="numbers">
   <div class="wrap">
-    <span class="eyebrow">Go-to-market</span>
-    <h2>The Atlanta wedge — and the six numbers buyers audit</h2>
-    <p class="lead">The pilot is designed backwards from an acquisition. We start small, in a single metro.</p>
-    <div class="grid g2" style="align-items:start">
-      <div>
-        <div class="facts"><div><b>≈6.4M</b><span>Metro pop.</span></div><div><b>≈2.4M</b><span>Households</span></div><div><b>~25</b><span>Y1 providers</span></div></div>
-        <div class="card">
-          <p style="margin-bottom:12px"><b style="color:var(--ink)">Start with two services</b> — wellness visits &amp; vaccinations, plus mobile grooming.</p>
-          <p style="margin-bottom:12px"><b style="color:var(--ink)">Recruit on lifestyle</b> — schedule control, dense routes, less admin.</p>
-          <p style="margin-bottom:12px"><b style="color:var(--ink)">One integration</b> — prescriptions and product recommendations route to the partner’s pharmacy / Autoship.</p>
-          <p><b style="color:var(--ink)">Defer</b> the broad “Amazon of Pet Care” brand and 24/7 teletriage until the core model is validated.</p>
+    <span class="eyebrow">The numbers</span>
+    <h2>Capital-efficient by design</h2>
+    <p class="lead">Commission, membership and partner outcome fees — never product margin.</p>
+    <div class="split">
+      <div class="three" style="grid-template-columns:1fr 1fr;gap:26px">
+        <div><div class="big">$34</div><div class="k">contribution per in-home visit</div></div>
+        <div><div class="big">~4×</div><div class="k">member LTV / CAC</div></div>
+        <div><div class="big">+29%</div><div class="k">Year-5 EBITDA margin</div></div>
+        <div><div class="big">$6M</div><div class="k">cumulative funding to break-even</div></div>
+      </div>
+      <div class="card">
+        <div class="chart" role="img" aria-label="Revenue by year: $1.1M, $4.8M, $16.8M, $45.5M, $105.3M">
+          <div class="col"><div class="bar" style="height:1.1%"><span>$1.1M</span></div><div class="y">Y1</div></div>
+          <div class="col"><div class="bar" style="height:4.6%"><span>$4.8M</span></div><div class="y">Y2</div></div>
+          <div class="col"><div class="bar" style="height:16%"><span>$16.8M</span></div><div class="y">Y3</div></div>
+          <div class="col"><div class="bar" style="height:43.2%"><span>$45.5M</span></div><div class="y">Y4</div></div>
+          <div class="col"><div class="bar" style="height:92%"><span>$105M</span></div><div class="y">Y5</div></div>
         </div>
-        <div class="card" style="margin-top:20px;background:var(--accent-soft);border-color:#f4cfae"><span class="tag">Why Atlanta</span><p style="color:#5b360f">Team is here, the market is dense, and Georgia’s in-person VCPR rule (plus the new June 2026 telemedicine affidavit) makes the home exam the legal gateway — compliance friction we handle becomes a barrier for competitors.</p></div>
-      </div>
-      <div>
-        <h3 style="font-size:24px;margin-bottom:6px">The six numbers the pilot must produce</h3>
-        <ol class="six">
-          <li><div><b>Visits per provider per day</b><span>Proves the routing engine works.</span></div></li>
-          <li><div><b>Contribution margin per visit, after drive time</b><span>Proves the unit economics.</span></div></li>
-          <li><div><b>Member retention at 6 and 12 months</b><span>Proves recurring-revenue quality.</span></div></li>
-          <li><div><b>Share of visits producing a routed prescription</b><span>Proves commerce attachment.</span></div></li>
-          <li class="key"><div><b>Lift in partner net sales per active customer vs. control</b><span>The number that sells the company — the metric Chewy used to justify Modern Animal.</span></div></li>
-          <li><div><b>Provider retention</b><span>Proves the supply side is durable.</span></div></li>
-        </ol>
+        <p style="text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a9694;margin-top:14px;font-weight:700">Projected revenue</p>
       </div>
     </div>
   </div>
@@ -463,48 +309,12 @@ footer a{color:#b9d3ce}
 
 <section id="exit" class="dark">
   <div class="wrap">
-    <span class="eyebrow">Acquisition path</span>
-    <h2>Who buys, why — and what comparable deals prove</h2>
-    <p class="lead">Two buyers kept in play — neither one gets to unilaterally price the asset.</p>
-    <div class="grid g3">
-      <div class="card"><span class="tag">Strongest · Chewy</span><h3>Owned + asset-light</h3><p>21.7M active customers · Autoship = 84.6% of net sales · ~47 clinics · scaled pharmacy. Extends Chewy Vet Care without new leases — matches its stated strategy.</p></div>
-      <div class="card"><span class="tag">Credible second bidder · Petco</span><h3>~300 store hospitals</h3><p>Grooming, vaccination clinics, Petco Perks. Friction: contractor providers need a separate structure — Petco vets are employees.</p></div>
-      <div class="card"><span class="tag">Fallback · Private equity</span><h3>Pet-services marketplaces</h3><p>Blackstone owns Rover. Adds health services to an existing portfolio — the backstop buyer.</p></div>
-    </div>
-    <div class="grid g2" style="margin-top:20px">
-      <div class="card comp"><span class="tag">Chewy → Modern Animal · Closed Apr 2026</span><div class="mult">≈ 3.2× revenue</div><p>~$399.8M on ~$125M revenue and 100k+ members — ≈ $4,000 per member family. Buyers pay for member relationships and footprint, not technology.</p>
-        <div class="ppa" role="img" aria-label="Purchase price allocation: technology 6.0 million, customer relationships 39.0 million, trademarks 19.0 million, goodwill 221.6 million"><div class="a"></div><div class="b"></div><div class="c"></div><div class="d">Goodwill $221.6M</div></div>
-        <div class="legend"><span style="color:var(--accent)">■ Tech $6.0M</span><span style="color:#7cc3b2">■ Customers $39.0M</span><span style="color:#4fa896">■ Trademarks $19.0M</span><span style="color:#5fd1b8">■ Goodwill $221.6M</span></div></div>
-      <div class="card comp"><span class="tag">Blackstone → Rover · Closed Feb 2024</span><div class="mult">≈ 10.6× revenue</div><p>~$2.3B on ~$218M revenue. Pet-services marketplaces command premium multiples.</p>
-        <p style="margin-top:10px;color:#fff"><b>PawPrime sits deliberately at the intersection of those two deals</b> — a pet-services marketplace in health, designed to be bought.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="roadmap">
-  <div class="wrap">
-    <span class="eyebrow">Roadmap &amp; risks</span>
-    <h2>Three phases, three gates</h2>
-    <p class="lead">Capital is released against measured results, not milestones on a slide.</p>
-    <div class="road">
-      <div class="ph"><span class="when">Phase 01 · 0–6 months</span><h3>Atlanta pilot</h3><p>~25 providers, two services, one metro.</p><div class="gate">Gate 1: provider utilisation at target</div></div>
-      <div class="ph"><span class="when">Phase 02 · 6–18 months</span><h3>Integration</h3><p>First partner pharmacy API; membership scaled.</p><div class="gate">Gate 2: Rx attachment ≥30%; 12-mo retention ≥60%</div></div>
-      <div class="ph"><span class="when">Phase 03 · 18–36 months</span><h3>Expand &amp; partner</h3><p>3–5 metros; formal partnership → acquisition talks.</p><div class="gate">Gate 3: measured lift in partner net sales / active customer</div></div>
-    </div>
-
-    <h3 style="font-size:26px;margin:54px 0 18px">What could go wrong — and how we handle it</h3>
-    <div class="tblwrap">
-    <table class="tbl risk">
-      <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
-      <tbody>
-        <tr><td>VCPR &amp; telehealth rules</td><td>Home exam establishes VCPR; in Georgia we file the Affidavit of Intent (new, June 2026).</td></tr>
-        <tr><td>Prescription authority</td><td>Only licensed vets on the network write; fulfilment stays with the partner’s pharmacy.</td></tr>
-        <tr><td>Contractor classification</td><td>Software-and-scheduling model; separate structure for an employee-style buyer (Petco).</td></tr>
-        <tr><td>Records &amp; privacy</td><td>Owner-owned record, explicit consent, audited access; defined retention rules.</td></tr>
-        <tr><td>One-partner dependency</td><td>Keep two buyers engaged; retain direct brand and membership as standalone value.</td></tr>
-        <tr><td>Route density &amp; leakage</td><td>City-by-city launch with density thresholds; hold both sides.</td></tr>
-      </tbody>
-    </table>
+    <span class="eyebrow">The exit</span>
+    <h2>Designed to be bought — by a strategic that needs exactly this</h2>
+    <p class="lead">Chewy is the strongest buyer, Petco a credible second bidder, private equity the backstop. Comparable deals show what buyers pay for.</p>
+    <div class="three" style="grid-template-columns:1fr 1fr">
+      <div class="card"><div class="big">3.2×</div><div class="k"><b>Chewy → Modern Animal</b>~$399.8M on ~$125M revenue. Buyers paid for member relationships and footprint — technology was just $6.0M.</div></div>
+      <div class="card"><div class="big">10.6×</div><div class="k"><b>Blackstone → Rover</b>~$2.3B on ~$218M revenue. Pet-services marketplaces command premium multiples.</div></div>
     </div>
   </div>
 </section>
@@ -513,8 +323,8 @@ footer a{color:#b9d3ce}
   <div class="wrap">
     <span class="eyebrow" style="color:var(--accent)">The ask</span>
     <div class="amt">~$6M</div>
-    <h2>One pilot partner &amp; the six numbers.</h2>
-    <p class="lead">Seed funding takes the Atlanta pilot to Gate 2. From there, the metrics — not the pitch — carry the acquisition conversation.</p>
+    <h2>Fund the Atlanta pilot. Let the metrics carry the exit.</h2>
+    <p class="lead">~25 providers, two services, one metro — then a partner pharmacy integration, then 3–5 metros. Capital is released against three measured gates, ending in proven lift in the partner’s net sales per customer.</p>
     <a class="btn btn-p" href="mailto:investors@pawprime.example?subject=PawPrime%20investor%20inquiry">Request the full deck</a>
     <div class="contact"><span style="color:var(--dark-muted);font-size:14px">Replace the contact address above with the team’s real investor email before publishing.</span></div>
   </div>
@@ -523,8 +333,8 @@ footer a{color:#b9d3ce}
 <footer>
   <div class="wrap">
     <p><b style="color:#d6e6e2">PawPrime</b> — The home care layer for pet health.</p>
-    <p>All pricing, take-rate, membership, unit-economics and five-year financial figures are planning assumptions, not forecasts or verified benchmarks; the Atlanta pilot exists to replace them with measured values. TAM/SAM are derived estimates. This page is informational and is not an offer to sell securities.</p>
-    <p>Market and comparable-transaction data: APPA (Mar 2026); Chewy investor materials and Q2 FY2026 10-Q (Apr 2026); Petco Q1 2026 results; Blackstone (Feb 2024); Mordor Intelligence; Dataintelo; AVMA; GVMA; VVCA. Accessed 6 October 2026. Re-verify Chewy’s Autoship share (84.6%) and the Modern Animal purchase-price allocation before external distribution.</p>
+    <p>All pricing, unit-economics and five-year financial figures are planning assumptions, not forecasts or verified benchmarks; TAM/SAM are derived estimates. This page is informational and is not an offer to sell securities.</p>
+    <p>Sources: APPA (Mar 2026); Chewy investor materials and Q2 FY2026 10-Q; Petco Q1 2026; Blackstone (Feb 2024); AVMA. Accessed 6 October 2026. Re-verify the Modern Animal purchase-price allocation before external distribution.</p>
   </div>
 </footer>
 
