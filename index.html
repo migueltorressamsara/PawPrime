@@ -233,7 +233,16 @@ section,.hero{position:relative}
 @media(max-width:1000px){.hero-pup{width:170px;top:70px}.bubble{font-size:12px;left:-10px;top:-30px}.hero h1{font-size:clamp(34px,7vw,52px)}.hero h1,.hero p.sub{max-width:none}}
 @media(max-width:620px){.hero-pup{position:relative;right:auto;top:auto;margin:-10px auto 0;display:block;width:150px}.hero{padding-top:56px}.edge{width:64px}.pack .pup{width:56px}}
 @media(prefers-reduced-motion:reduce){.hero-pup,.pack .pup,.pup .eyes{animation:none}}
-h1,h2,h3{font-weight:600}.hero h1{font-size:clamp(38px,5.4vw,64px)}.p3{left:auto;right:3%;bottom:6%}.edge{width:112px}section:not(.ask){padding-bottom:120px}@media(max-width:620px){.edge{width:72px}section:not(.ask){padding-bottom:90px}}</style>
+h1,h2,h3{font-weight:600}.hero h1{font-size:clamp(38px,5.4vw,64px)}.p3{left:auto;right:3%;bottom:6%}.edge{width:112px}section:not(.ask){padding-bottom:120px}@media(max-width:620px){.edge{width:72px}section:not(.ask){padding-bottom:90px}}
+.polaroids{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:start}
+.polaroids figure{background:#fff;padding:10px 10px 0;border-radius:6px;box-shadow:0 12px 28px rgba(20,32,31,.16);transform:rotate(var(--r));transition:transform .25s}
+.polaroids figure:hover{transform:rotate(0) scale(1.05);z-index:3}
+.polaroids img{display:block;width:100%;height:auto;aspect-ratio:1/1.1;object-fit:cover;border-radius:3px}
+.polaroids figcaption{font-family:Fredoka,sans-serif;font-weight:500;font-size:14px;text-align:center;padding:10px 0 12px;color:var(--ink)}
+.polaroids figure:nth-child(2) img{object-position:center 25%}
+@media(max-width:900px){.polaroids{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.polaroids{grid-template-columns:1fr 1fr}}
+.polaroids figure:nth-child(1) img{object-position:25% center}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -381,6 +390,21 @@ h1,h2,h3{font-weight:600}.hero h1{font-size:clamp(38px,5.4vw,64px)}.p3{left:auto
     <div class="three" style="grid-template-columns:1fr 1fr">
       <div class="card"><div class="big">3.2×</div><div class="k"><b>Chewy → Modern Animal</b>~$399.8M on ~$125M revenue. Buyers paid for member relationships and footprint — technology was just $6.0M.</div></div>
       <div class="card"><div class="big">10.6×</div><div class="k"><b>Blackstone → Rover</b>~$2.3B on ~$218M revenue. Pet-services marketplaces command premium multiples.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg2 pack-sec" id="pack">
+  <div class="wrap">
+    <span class="eyebrow">The pack</span>
+    <h2>Meet Oreo &amp; Koda — our chief pet officers</h2>
+    <p class="lead">Every feature starts with these two. They’re the toughest beta testers a pet-care company could ask for.</p>
+    <div class="polaroids">
+      <figure style="--r:-3deg"><img src="images/oreo-unicorn.jpg" alt="Oreo in a pink unicorn costume" width="800" height="548"><figcaption>Oreo · unicorn mode</figcaption></figure>
+      <figure style="--r:2deg"><img src="images/oreo-harness.jpg" alt="Oreo lying in the leaves wearing a blue harness" width="800" height="767"><figcaption>Oreo · trail-ready</figcaption></figure>
+      <figure style="--r:-2deg"><img src="images/oreo-shirt.jpg" alt="Oreo in a navy polka-dot shirt" width="800" height="672"><figcaption>Oreo · dressed to impress</figcaption></figure>
+      <figure style="--r:3deg"><img src="images/koda-floor.jpg" alt="Koda lying on the floor" width="580" height="800"><figcaption>Koda · on duty</figcaption></figure>
+      <figure style="--r:-2deg"><img src="images/koda-car.jpg" alt="Koda smiling in the car" width="647" height="800"><figcaption>Koda · co-pilot</figcaption></figure>
     </div>
   </div>
 </section>
