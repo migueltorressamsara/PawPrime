@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PawPrime — The Home Care Layer for Pet Health</title>
+<meta name="description" content="PawPrime is an AI-dispatched network of independent mobile vets and groomers, built to plug into a retailer's pharmacy and Autoship. Investor overview.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf8f3; --bg2:#f3ede3; --card:#ffffff; --ink:#14201f; --muted:#5a6866;
+  --line:#e5ddd0; --brand:#0f6b5c; --brand-d:#0a4a40; --accent:#f08a3c; --accent-soft:#fde8d6;
+  --neg:#c4493a; --dark:#0c2b27; --dark-ink:#eaf3f1; --dark-muted:#9db9b4;
+  --radius:18px; --shadow:0 10px 30px rgba(20,32,31,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.12;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-bottom:14px}
+h2{font-size:clamp(30px,4.2vw,46px);margin-bottom:16px;max-width:820px}
+.lead{font-size:18px;color:var(--muted);max-width:720px;margin-bottom:44px}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;font-size:15px;transition:.2s}
+.btn-p{background:var(--accent);color:#1d1206}.btn-p:hover{background:#ff9a52;transform:translateY(-1px)}
+.btn-g{border:1.5px solid rgba(255,255,255,.4);color:#fff}.btn-g:hover{background:rgba(255,255,255,.1)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(251,248,243,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Fraunces,serif;font-weight:700;font-size:22px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo svg{width:26px;height:26px}
+.links{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:500}
+.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--ink)}
+.links .btn{padding:9px 18px;background:var(--brand);color:#fff;font-size:14px}.links .btn:hover{background:var(--brand-d);color:#fff}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1b8a76 0,transparent 60%),var(--dark);color:var(--dark-ink);padding:110px 0 90px;overflow:hidden}
+.hero .eyebrow{color:var(--accent)}
+.hero h1{font-size:clamp(40px,6.4vw,76px);max-width:900px;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{font-size:20px;color:var(--dark-muted);max-width:700px;margin-bottom:36px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px;padding-top:34px;border-top:1px solid rgba(255,255,255,.14)}
+.stat b{display:block;font-family:Fraunces,serif;font-size:clamp(30px,4vw,44px);color:#fff}
+.stat span{font-size:13.5px;color:var(--dark-muted);display:block;max-width:230px}
+
+/* problem */
+.bg2{background:var(--bg2)}
+.gap-callout{margin-top:28px;padding:22px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid #f4cfae;font-size:17px}
+.gap-callout b{color:var(--brand-d)}
+
+/* why now */
+.num{font-family:Fraunces,serif;font-size:40px;color:var(--brand);line-height:1;margin:6px 0 10px}
+.src{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a9694;margin-top:14px;display:block}
+.sowhat{margin-top:28px;background:var(--brand);color:#fff;border-radius:var(--radius);padding:26px 30px;font-size:18px}
+.sowhat b{color:var(--accent-soft)}
+
+/* solution + loop */
+.dark{background:var(--dark);color:var(--dark-ink)}
+.dark h2{color:#fff}.dark .lead{color:var(--dark-muted)}.dark .eyebrow{color:var(--accent)}
+.dark .card{background:#12403a;border-color:#1d5a51;box-shadow:none}
+.dark .card h3{color:#fff}.dark .card p{color:var(--dark-muted)}
+.pipe{margin-top:26px;text-align:center;padding:18px;border:1.5px dashed #2a7468;border-radius:var(--radius);color:var(--dark-muted);font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:10px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center;font-size:14px;font-weight:600;position:relative}
+.step i{display:block;font-style:normal;font-family:Fraunces,serif;font-size:26px;color:var(--accent);margin-bottom:4px}
+.step small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:4px}
+
+/* market */
+.tam{display:flex;justify-content:center;align-items:center;min-height:380px;position:relative}
+.circ{border-radius:50%;display:flex;flex-direction:column;align-items:center;position:absolute;text-align:center}
+.c1{width:360px;height:360px;background:#d4ebe5;justify-content:flex-start;padding-top:28px}
+.c2{width:240px;height:240px;background:#7cc3b2;justify-content:flex-start;padding-top:28px;bottom:10px;top:auto;position:relative;margin-top:100px}
+.c3{width:112px;height:112px;background:var(--accent);justify-content:center;color:#1d1206;position:relative}
+.circ b{font-family:Fraunces,serif;font-size:28px}.circ span{font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase;color:var(--brand-d)}
+.c3 span{color:#1d1206}.c3 b{font-size:22px}
+.tam-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.tam-nest{position:relative;width:360px;height:360px;margin:0 auto}
+.tam-nest .circ{left:50%;transform:translateX(-50%)}
+.tam-nest .c1{top:0}.tam-nest .c2{top:108px;margin:0;position:absolute}.tam-nest .c3{top:216px;position:absolute}
+.defs li{list-style:none;margin-bottom:18px;font-size:15px;color:var(--muted)}
+.defs li b{color:var(--ink);display:block;font-size:16px}
+
+/* quadrant */
+.quad{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.q{padding:28px;min-height:170px;border:1px solid var(--line);margin:-.5px}
+.q h3{font-size:18px;margin-bottom:6px}.q p{font-size:14px;color:var(--muted)}.q small{display:block;margin-top:10px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#8a9694}
+.q.us{background:var(--brand);color:#fff}.q.us p{color:#cfe9e3}.q.us small{color:var(--accent)}
+.axis{display:flex;justify-content:space-between;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:10px 4px 0}
+
+/* moat */
+.tier{display:flex;gap:18px;align-items:flex-start}
+.tier .t{flex:0 0 auto;font-family:Fraunces,serif;font-size:34px;color:var(--accent);line-height:1}
+.honest{margin-top:26px;padding:26px 30px;background:var(--dark);color:var(--dark-ink);border-radius:var(--radius)}
+.honest h3{color:#fff;font-size:24px;margin-bottom:8px}.honest p{color:var(--dark-muted)}.honest b{color:var(--accent)}
+
+/* revenue / table */
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.tbl th,.tbl td{padding:14px 16px;text-align:left;font-size:14.5px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{background:var(--bg2);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{font-weight:600}
+.pill{display:inline-block;font-size:11px;font-weight:700;background:var(--accent-soft);color:#a4540f;border-radius:999px;padding:2px 9px;margin-left:6px;white-space:nowrap}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl.nums td:not(:first-child),.tbl.nums th:not(:first-child){text-align:right}
+.nums td{white-space:nowrap}.neg{color:var(--neg)}.pos{color:var(--brand);font-weight:600}
+
+/* unit economics */
+.ue big{display:block;font-family:Fraunces,serif;font-size:52px;color:var(--brand);line-height:1;margin:8px 0 2px}
+.ue .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a9694;font-weight:700}
+.ue dl{margin-top:18px;border-top:1px solid var(--line)}
+.ue dl div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.ue dt{color:var(--muted)}.ue dd{font-weight:600}
+.ue .hook{margin-top:14px;font-size:13.5px;color:var(--brand-d);font-weight:600}
+
+/* chart */
+.chart{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:end;height:280px;padding:10px 0 0}
+.col{display:flex;flex-direction:column;justify-content:flex-end;height:100%;align-items:center}
+.bar{width:100%;max-width:78px;background:linear-gradient(180deg,#1b8a76,var(--brand));border-radius:8px 8px 0 0;position:relative;min-height:4px}
+.bar span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:13px;font-weight:700;white-space:nowrap}
+.col .y{margin-top:8px;font-size:13px;font-weight:600;color:var(--muted)}
+.cwrap{display:grid;grid-template-columns:1fr;gap:20px;margin-top:26px}
+.callout{background:var(--brand);color:#fff;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;justify-content:center}
+.callout big{font-family:Fraunces,serif;font-size:64px;color:var(--accent);line-height:1}
+.callout p{color:#d6ece7;margin-top:10px}
+
+/* GTM */
+.six{counter-reset:s}
+.six li{list-style:none;display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.six li::before{counter-increment:s;content:"0" counter(s);font-family:Fraunces,serif;font-size:26px;color:var(--accent);flex:0 0 40px}
+.six b{display:block}.six span{color:var(--muted);font-size:14.5px}
+.six li.key{background:var(--accent-soft);padding:16px;border-radius:12px;border:0;margin:6px 0}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.facts b{display:block;font-family:Fraunces,serif;font-size:26px;color:var(--brand)}.facts span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a9694;font-weight:700}
+
+/* buyers */
+.comp{display:flex;flex-direction:column;gap:6px}
+.mult{font-family:Fraunces,serif;font-size:44px;color:var(--accent);line-height:1}
+.ppa{display:flex;height:46px;border-radius:10px;overflow:hidden;margin:16px 0 8px;font-size:11px;font-weight:700;color:#fff}
+.ppa div{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+.ppa .a{flex:0 0 1.5%;background:var(--accent)}.ppa .b{flex:0 0 9.8%;background:#7cc3b2}.ppa .c{flex:0 0 4.8%;background:#4fa896}.ppa .d{flex:1;background:var(--brand)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--dark-muted)}
+
+/* roadmap */
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.ph{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--brand);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.ph:nth-child(2){border-top-color:#4fa896}.ph:nth-child(3){border-top-color:var(--accent)}
+.ph .when{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ph h3{font-size:22px;margin:6px 0 8px}.ph p{font-size:14.5px;color:var(--muted)}
+.gate{margin-top:14px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:13px;font-weight:600;color:#7a3f0b}
+.risk td:nth-child(2){color:var(--muted)}
+
+/* ask */
+.ask{background:radial-gradient(900px 400px at 10% 0,#1b8a76 0,transparent 60%),var(--dark);color:var(--dark-ink);text-align:center}
+.ask h2{color:#fff;margin:0 auto 16px}
+.ask .lead{margin:0 auto 30px;color:var(--dark-muted)}
+.ask .amt{font-family:Fraunces,serif;font-size:clamp(64px,10vw,120px);color:var(--accent);line-height:1}
+.contact{margin-top:34px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+footer{background:#07201d;color:#86a39e;padding:44px 0;font-size:12.5px}
+footer p{max-width:860px;margin-bottom:10px}
+footer a{color:#b9d3ce}
+
+@media(max-width:900px){
+  section{padding:64px 0}
+  .g3,.g4,.road{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .tam-wrap,.cwrap{grid-template-columns:1fr}
+  .loop{grid-template-columns:1fr 1fr}
+  .links a:not(.btn){display:none}
+}
+@media(max-width:620px){
+  .g2,.g3,.g4,.road,.facts{grid-template-columns:1fr}
+  .quad{grid-template-columns:1fr}
+  .hero{padding:80px 0 60px}
+  .tam-nest{transform:scale(.82);transform-origin:top center;height:300px}
+  .chart{height:230px;gap:8px}
+  .bar span{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="PawPrime home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="#0f6b5c"><ellipse cx="9" cy="12" rx="3" ry="4"/><ellipse cx="23" cy="12" rx="3" ry="4"/><ellipse cx="15" cy="7" rx="3" ry="4"/><ellipse cx="17" cy="7" rx="3" ry="4"/><path d="M16 15c-5 0-9 4-9 8 0 3 2 4 4 4 2 0 3-1 5-1s3 1 5 1c2 0 4-1 4-4 0-4-4-8-9-8z"/></g></svg>
+      PawPrime
+    </a>
+    <div class="links">
+      <a href="#problem">Problem</a><a href="#why-now">Why now</a><a href="#model">Model</a><a href="#market">Market</a><a href="#financials">Financials</a><a href="#exit">Exit</a>
+      <a class="btn" href="#ask">The ask</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Investor overview · Seed round</span>
+    <h1>The one place Chewy and Petco cannot reach — <em>the pet’s living room.</em></h1>
+    <p class="sub">PawPrime is an AI-dispatched network of independent mobile vets and groomers — built to plug into a retailer’s pharmacy and Autoship, and to be acquired by one.</p>
+    <div class="cta">
+      <a class="btn btn-p" href="#ask">See the ask</a>
+      <a class="btn btn-g" href="#model">How it works</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>$40B</b><span>U.S. veterinary services market, growing ≈5% a year</span></div>
+      <div class="stat"><b>$399.8M</b><span>What Chewy paid for 29 Modern Animal clinics (Apr 2026)</span></div>
+      <div class="stat"><b>~$6M</b><span>Cumulative funding to break-even in Year 3 (plan)</span></div>
+      <div class="stat"><b>$105M</b><span>Year-5 revenue target — ≈1.1% of serviceable market (plan)</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <span class="eyebrow">The problem</span>
+    <h2>Three parties, one missing touchpoint</h2>
+    <p class="lead">Every player in pet care solves part of the puzzle. Nobody has industrialised the visit inside the home — where the care decision is actually made.</p>
+    <div class="grid g3">
+      <div class="card"><span class="tag">Pet parents</span><h3>Care that needs a car ride.</h3><p>A carrier, a waiting room, anxiety — worst for cats, senior or anxious pets and multi-pet homes, the owners most likely to delay or skip care.</p></div>
+      <div class="card"><span class="tag">Independent providers</span><h3>No route, no engine.</h3><p>Mobile vets, techs and groomers can’t build route density, a booking engine or their own admin — while corporate roll-ups consolidate around them.</p></div>
+      <div class="card"><span class="tag">Retailers</span><h3>Everything but the visit.</h3><p>Chewy and Petco own products, pharmacy, Autoship and the customer relationship — but not the moment care happens inside the home.</p></div>
+    </div>
+    <div class="gap-callout"><b>The gap:</b> pet care is decided at a clinic or a website — when the pet, and the data, are in the home.</div>
+  </div>
+</section>
+
+<section id="why-now" class="bg2">
+  <div class="wrap">
+    <span class="eyebrow">Why now</span>
+    <h2>The window is open in 2026 — and closing</h2>
+    <p class="lead">Four forces converge on the home visit. The argument is timing — the constraint is people, not buildings.</p>
+    <div class="grid g4">
+      <div class="card"><span class="tag">01 · Market</span><div class="num">$165B</div><h3>Big and still growing.</h3><p>U.S. pet spend hit $158B in 2025 and projects to $165B in 2026; vet care &amp; products alone were $41B.</p><span class="src">APPA · March 2026</span></div>
+      <div class="card"><span class="tag">02 · Buyers</span><div class="num">$399.8M</div><h3>Buyers are shopping.</h3><p>Chewy closed Modern Animal — 29 clinics, 24/7 virtual care, 100k+ member families, &gt;$125M annualised revenue.</p><span class="src">Chewy · April 2026 · 10-Q</span></div>
+      <div class="card"><span class="tag">03 · Incumbent</span><div class="num">~300</div><h3>Petco is capital-constrained.</h3><p>About 300 in-store Vetco hospitals, but new hospital construction is paused — it needs care capacity without capex.</p><span class="src">Petco · 2025–2026</span></div>
+      <div class="card"><span class="tag">04 · Supply</span><div class="num">~76%</div><h3>Capacity is people.</h3><p>The U.S. will produce only ~76% of the veterinarians it needs through 2032. Brick-and-mortar can’t close that gap.</p><span class="src">AVMA / Industry · 2026</span></div>
+    </div>
+    <div class="sowhat"><b>So what:</b> a software layer that routes existing independent vets is the only way to add care capacity without construction — or hiring a national veterinary workforce.</div>
+  </div>
+</section>
+
+<section id="model" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">The solution</span>
+    <h2>Three assets, one ordering pipe</h2>
+    <p class="lead">We never hold stock. Every visit can queue a prescription or refill that — with consent — routes to the partner’s pharmacy.</p>
+    <div class="grid g3">
+      <div class="card"><span class="tag">Asset 01</span><h3>Provider network</h3><p>Independent mobile vets, techs and groomers, onboarded neighbourhood by neighbourhood. Independents — not employees. Closes the last-mile care gap no clinic can reach.</p></div>
+      <div class="card"><span class="tag">Asset 02</span><h3>AI engine</h3><p>Matching &amp; routing, teletriage intake, consumption forecasting and care-plan prompts. Scheduling as a product — turning provider hours into capacity that scales.</p></div>
+      <div class="card"><span class="tag">Asset 03</span><h3>Home health record</h3><p>A digital record built from visits, wearables and remote triage that predicts what each pet needs next — exactly what runs an Autoship business.</p></div>
+    </div>
+    <div class="pipe">The ordering pipe · not an inventory</div>
+
+    <h3 style="font-size:28px;margin:64px 0 8px;color:#fff">One value loop. Each visit makes the next cheaper to earn.</h3>
+    <p class="lead" style="margin-bottom:24px">Four AI models power the loop — matching, triage, forecasting and care-plan prompts.</p>
+    <div class="loop" style="color:var(--ink)">
+      <div class="step"><i>1</i>Book<small>Owner books via PawPrime or partner app</small></div>
+      <div class="step"><i>2</i>Dispatch<small>AI matches provider &amp; routes the day</small></div>
+      <div class="step"><i>3</i>Visit<small>Exam at home; record updated</small></div>
+      <div class="step"><i>4</i>Route<small>Rx / refill queued to partner pharmacy</small></div>
+      <div class="step"><i>5</i>Predict<small>Forecast needs; queue Autoship &amp; next visit</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="market">
+  <div class="wrap">
+    <span class="eyebrow">Market opportunity</span>
+    <h2>A big market — and a narrow wedge</h2>
+    <p class="lead">We are not claiming we will win the market — we are claiming a defensible, focused position.</p>
+    <div class="tam-wrap">
+      <div class="tam-nest" role="img" aria-label="Nested circles: TAM about 48 billion dollars, SAM about 9.6 billion, SOM year 5 about 105 million">
+        <div class="circ c1"><span>TAM</span><b>≈ $48B</b></div>
+        <div class="circ c2"><span>SAM</span><b>≈ $9.6B</b></div>
+        <div class="circ c3"><span>SOM · Y5</span><b>≈ $105M</b></div>
+      </div>
+      <ul class="defs">
+        <li><b>TAM · ≈ $48B</b>U.S. vet services (~$40B, +5%/yr) plus pet grooming (~$8B, within APPA’s $14.3B “other services”).</li>
+        <li><b>SAM · ≈ $9.6B</b>Home-addressable routine &amp; preventive care in the top 25 U.S. metros (≈20% of TAM).</li>
+        <li><b>SOM · ≈ $105M by Year 5</b>About 1.1% of SAM. The plan doesn’t require winning the market — only a slice of it.</li>
+        <li><b>The niche grows faster</b>In-home veterinary services: ~$1.65B (2024), ~9.2% CAGR.</li>
+      </ul>
+    </div>
+    <p style="font-size:12.5px;color:#8a9694;margin-top:14px">TAM/SAM are derived estimates, not third-party figures. Sources: APPA (Mar 2026), Chewy investor materials (Apr 2026), Mordor Intelligence, Dataintelo.</p>
+  </div>
+</section>
+
+<section class="bg2" id="position">
+  <div class="wrap">
+    <span class="eyebrow">Positioning</span>
+    <h2>The empty quadrant</h2>
+    <p class="lead">Two axes. Every major player occupies three quadrants. The fourth — home care plus a real commerce engine — is empty.</p>
+    <div class="axis"><span>◀ Clinic / store</span><span>Care setting</span><span>The home ▶</span></div>
+    <div class="quad" style="margin-top:8px">
+      <div class="q"><h3>Chewy · Petco</h3><p>Owned clinics + Autoship + pharmacy — mature, well-paid, well understood.</p><small>Clinic · full commerce</small></div>
+      <div class="q us"><h3>PawPrime</h3><p>Home visits + the partner’s retail and pharmacy. Expensive for a retailer to build (they’re building clinics instead), impossible for a home-vet startup to fill.</p><small>Home · full commerce — empty</small></div>
+      <div class="q"><h3>Independent vet clinics</h3><p>The legacy market — many practices, fragmented, decoupled from ecommerce entirely.</p><small>Clinic · no commerce</small></div>
+      <div class="q"><h3>Rover · mobile groomers · home-vet startups</h3><p>Services without commerce: no Autoship, no pharmacy, no scale.</p><small>Home · no commerce</small></div>
+    </div>
+    <div class="axis"><span>▲ Full retail + pharmacy</span><span>Commerce engine</span><span>▼ None</span></div>
+
+    <div class="tblwrap" style="margin-top:44px">
+    <table class="tbl">
+      <thead><tr><th>Player</th><th>Where care happens</th><th>Commerce engine</th><th>Gap</th></tr></thead>
+      <tbody>
+        <tr><td>Chewy + Modern Animal</td><td>~47 clinics after the deal, plus 24/7 virtual care</td><td>Autoship + pharmacy · 21.7M active customers</td><td>No care in the home — clinics mature in 2–4 years</td></tr>
+        <tr><td>Petco</td><td>~300 in-store Vetco hospitals</td><td>1,378 stores · online · Petco Perks</td><td>New hospitals paused — capital-constrained</td></tr>
+        <tr><td>Rover (Blackstone)</td><td>Sitting and walking in the home</td><td>No health commerce</td><td>No vet care, no prescriptions</td></tr>
+        <tr><td>Home-vet startups</td><td>Home visits</td><td>None</td><td>No retail partner, no scale</td></tr>
+        <tr style="background:var(--accent-soft)"><td>PawPrime</td><td>Home visits, teletriage, telemedicine</td><td>The partner’s — by design</td><td>Built to close all four gaps</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section id="moat">
+  <div class="wrap">
+    <span class="eyebrow">Differentiation &amp; moat</span>
+    <h2>Four gaps we close — one moat that is not the app</h2>
+    <p class="lead">Some gaps are operational. One — the prescription gap — is regulatory, and we treat it as an advantage.</p>
+    <div class="grid g4">
+      <div class="card"><span class="tag">Gap 01 · Care setting</span><p>Neither Chewy nor Petco runs routine care in the home. We do.</p></div>
+      <div class="card"><span class="tag">Gap 02 · Commerce</span><p>Home-vet startups have no retail or pharmacy engine. We design around the partner’s.</p></div>
+      <div class="card"><span class="tag">Gap 03 · Capacity</span><p>Footprint grows slowly and Petco can’t fund new hospitals. Software scales instead.</p></div>
+      <div class="card"><span class="tag">Gap 04 · Regulatory</span><p>Eight states (incl. Georgia) require an in-person VCPR. The home exam unlocks every later refill.</p></div>
+    </div>
+    <h3 style="font-size:26px;margin:48px 0 18px">The moat — ranked, in honest order</h3>
+    <div class="grid g3">
+      <div class="card tier"><div class="t">1</div><div><h3>Route density</h3><p>Neighbourhood-by-neighbourhood supply coverage a buyer cannot buy quickly. <b>Hardest to build.</b></p></div></div>
+      <div class="card tier"><div class="t">2</div><div><h3>Provider loyalty</h3><p>Schedule control and dense routes keep independents on the platform.</p></div></div>
+      <div class="card tier"><div class="t">3</div><div><h3>Pet health record</h3><p>Compounds over time and feeds Autoship — the moat of data.</p></div></div>
+    </div>
+    <div class="honest">
+      <h3>The app is not the moat.</h3>
+      <p>Chewy valued Modern Animal’s technology at <b>$6.0M</b> of a ~$399.8M price. Buyers pay for relationships, footprint and fit — so we build the three things a buyer can’t buy cheaply. <span style="opacity:.7">Source: PPA allocation, Chewy Q2 FY2026 10-Q.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="bg2" id="revenue">
+  <div class="wrap">
+    <span class="eyebrow">Revenue model</span>
+    <h2>Capturing value — without selling product</h2>
+    <p class="lead">Five streams. No product margin, ever: replenishment margin is the buyer’s core business, so we never compete with it.</p>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th>Stream</th><th>Who pays</th><th>How it works</th><th>Why a buyer values it</th></tr></thead>
+      <tbody>
+        <tr><td>Booking commission<span class="pill">15–20%</span></td><td>Provider (deducted from visit fee)</td><td>Take rate on each vet or grooming visit.</td><td>Proves demand and visit-level economics.</td></tr>
+        <tr><td>Care membership<span class="pill">$20 / mo</span></td><td>Pet parent</td><td>24/7 teletriage, member pricing, priority booking, annual plan.</td><td>Recurring revenue and retention — 100k+ member families came with Modern Animal.</td></tr>
+        <tr><td>Partner outcome fees<span class="pill">Per customer</span></td><td>Chewy or Petco</td><td>Per new customer, Autoship enrolment or Rx routed.</td><td>Paid only for outcomes the partner already measures.</td></tr>
+        <tr><td>Provider SaaS<span class="pill">Phase 2 · $300/mo</span></td><td>Provider</td><td>Routing, records and payment tools as a monthly plan.</td><td>Keeps providers on the platform.</td></tr>
+        <tr><td>Demand insights<span class="pill">Phase 3</span></td><td>Partner</td><td>Consented, aggregated forecasts of food, diet and Rx demand.</td><td>Feeds the partner’s own inventory planning.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:13px;color:#8a9694;margin-top:12px">Pricing, take rate, membership and SaaS fees are planning inputs, not forecasts — to be validated in the pilot.</p>
+  </div>
+</section>
+
+<section id="economics">
+  <div class="wrap">
+    <span class="eyebrow">Unit economics</span>
+    <h2>The math that has to work</h2>
+    <p class="lead">Three units of scale. Each value is a planning input the pilot exists to confirm.</p>
+    <div class="grid g3 ue">
+      <div class="card"><span class="lbl">Unit 01 · One in-home visit</span><big>$34</big><span class="lbl">Contribution per visit</span>
+        <dl><div><dt>Service order value</dt><dd>$225</dd></div><div><dt>18% commission</dt><dd>$40.50</dd></div><div><dt>Variable cost</dt><dd>−$6.50</dd></div><div><dt>Net contribution</dt><dd>$34.00</dd></div></dl>
+        <p class="hook">Visits priced ~30% above clinic rates.</p></div>
+      <div class="card"><span class="lbl">Unit 02 · One active provider / month</span><big>$3,540</big><span class="lbl">Revenue to PawPrime</span>
+        <dl><div><dt>Visits / month</dt><dd>80</dd></div><div><dt>Commission</dt><dd>$3,240</dd></div><div><dt>Provider SaaS (phase 2)</dt><dd>$300</dd></div><div><dt>Annualised</dt><dd>~$42.5k</dd></div></dl>
+        <p class="hook">Provider keeps ~$14,760 / month — the recruiting hook.</p></div>
+      <div class="card"><span class="lbl">Unit 03 · One member / year</span><big>~4×</big><span class="lbl">LTV / CAC</span>
+        <dl><div><dt>Membership</dt><dd>$240 / yr</dd></div><div><dt>Annual retention</dt><dd>60–70%</dd></div><div><dt>CAC (partner-assisted)</dt><dd>~$120</dd></div><div><dt>Payback</dt><dd>~7–8 months</dd></div></dl>
+        <p class="hook">Expected member LTV ≈ $720.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg2" id="financials">
+  <div class="wrap">
+    <span class="eyebrow">Financial projections</span>
+    <h2>Five years — break-even in Year 3</h2>
+    <p class="lead">The headline isn’t the hundred million. It’s the six million — capital efficiency is the story.</p>
+    <div class="card">
+      <div class="chart" role="img" aria-label="Total revenue by year: Y1 1.13 million, Y2 4.82 million, Y3 16.83 million, Y4 45.54 million, Y5 105.33 million dollars">
+        <div class="col"><div class="bar" style="height:1.1%"><span>$1.1M</span></div><div class="y">Y1</div></div>
+        <div class="col"><div class="bar" style="height:4.6%"><span>$4.8M</span></div><div class="y">Y2</div></div>
+        <div class="col"><div class="bar" style="height:16%"><span>$16.8M</span></div><div class="y">Y3</div></div>
+        <div class="col"><div class="bar" style="height:43.2%"><span>$45.5M</span></div><div class="y">Y4</div></div>
+        <div class="col"><div class="bar" style="height:92%"><span>$105.3M</span></div><div class="y">Y5</div></div>
+      </div>
+      <p style="text-align:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#8a9694;margin-top:14px;font-weight:700">Total revenue</p>
+    </div>
+    <div class="cwrap">
+      <div class="tblwrap">
+      <table class="tbl nums">
+        <thead><tr><th>Metric</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th></tr></thead>
+        <tbody>
+          <tr><td>Active providers</td><td>25</td><td>75</td><td>200</td><td>450</td><td>900</td></tr>
+          <tr><td>Visits (000s)</td><td>15</td><td>60</td><td>200</td><td>495</td><td>1,080</td></tr>
+          <tr><td>GMV</td><td>$3.4M</td><td>$13.7M</td><td>$46.4M</td><td>$116.3M</td><td>$257.0M</td></tr>
+          <tr><td>Total revenue</td><td>$1.13M</td><td>$4.82M</td><td>$16.83M</td><td>$45.54M</td><td>$105.33M</td></tr>
+          <tr><td>EBITDA</td><td class="neg">−$2.27M</td><td class="neg">−$3.37M</td><td class="pos">+$0.94M</td><td class="pos">+$9.60M</td><td class="pos">+$30.46M</td></tr>
+          <tr><td>EBITDA margin</td><td class="neg">−201%</td><td class="neg">−70%</td><td class="pos">+6%</td><td class="pos">+21%</td><td class="pos">+29%</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout">
+        <big>~$6M</big>
+        <p>Cumulative funding through break-even. No inventory, no fleet, no clinic build-out. Membership revenue overtakes commission by Year 4.</p>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#8a9694;margin-top:12px">Assumption-based planning model — not a forecast.</p>
+  </div>
+</section>
+
+<section id="gtm">
+  <div class="wrap">
+    <span class="eyebrow">Go-to-market</span>
+    <h2>The Atlanta wedge — and the six numbers buyers audit</h2>
+    <p class="lead">The pilot is designed backwards from an acquisition. We start small, in a single metro.</p>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <div class="facts"><div><b>≈6.4M</b><span>Metro pop.</span></div><div><b>≈2.4M</b><span>Households</span></div><div><b>~25</b><span>Y1 providers</span></div></div>
+        <div class="card">
+          <p style="margin-bottom:12px"><b style="color:var(--ink)">Start with two services</b> — wellness visits &amp; vaccinations, plus mobile grooming.</p>
+          <p style="margin-bottom:12px"><b style="color:var(--ink)">Recruit on lifestyle</b> — schedule control, dense routes, less admin.</p>
+          <p style="margin-bottom:12px"><b style="color:var(--ink)">One integration</b> — prescriptions and product recommendations route to the partner’s pharmacy / Autoship.</p>
+          <p><b style="color:var(--ink)">Defer</b> the broad “Amazon of Pet Care” brand and 24/7 teletriage until the core model is validated.</p>
+        </div>
+        <div class="card" style="margin-top:20px;background:var(--accent-soft);border-color:#f4cfae"><span class="tag">Why Atlanta</span><p style="color:#5b360f">Team is here, the market is dense, and Georgia’s in-person VCPR rule (plus the new June 2026 telemedicine affidavit) makes the home exam the legal gateway — compliance friction we handle becomes a barrier for competitors.</p></div>
+      </div>
+      <div>
+        <h3 style="font-size:24px;margin-bottom:6px">The six numbers the pilot must produce</h3>
+        <ol class="six">
+          <li><div><b>Visits per provider per day</b><span>Proves the routing engine works.</span></div></li>
+          <li><div><b>Contribution margin per visit, after drive time</b><span>Proves the unit economics.</span></div></li>
+          <li><div><b>Member retention at 6 and 12 months</b><span>Proves recurring-revenue quality.</span></div></li>
+          <li><div><b>Share of visits producing a routed prescription</b><span>Proves commerce attachment.</span></div></li>
+          <li class="key"><div><b>Lift in partner net sales per active customer vs. control</b><span>The number that sells the company — the metric Chewy used to justify Modern Animal.</span></div></li>
+          <li><div><b>Provider retention</b><span>Proves the supply side is durable.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exit" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">Acquisition path</span>
+    <h2>Who buys, why — and what comparable deals prove</h2>
+    <p class="lead">Two buyers kept in play — neither one gets to unilaterally price the asset.</p>
+    <div class="grid g3">
+      <div class="card"><span class="tag">Strongest · Chewy</span><h3>Owned + asset-light</h3><p>21.7M active customers · Autoship = 84.6% of net sales · ~47 clinics · scaled pharmacy. Extends Chewy Vet Care without new leases — matches its stated strategy.</p></div>
+      <div class="card"><span class="tag">Credible second bidder · Petco</span><h3>~300 store hospitals</h3><p>Grooming, vaccination clinics, Petco Perks. Friction: contractor providers need a separate structure — Petco vets are employees.</p></div>
+      <div class="card"><span class="tag">Fallback · Private equity</span><h3>Pet-services marketplaces</h3><p>Blackstone owns Rover. Adds health services to an existing portfolio — the backstop buyer.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <div class="card comp"><span class="tag">Chewy → Modern Animal · Closed Apr 2026</span><div class="mult">≈ 3.2× revenue</div><p>~$399.8M on ~$125M revenue and 100k+ members — ≈ $4,000 per member family. Buyers pay for member relationships and footprint, not technology.</p>
+        <div class="ppa" role="img" aria-label="Purchase price allocation: technology 6.0 million, customer relationships 39.0 million, trademarks 19.0 million, goodwill 221.6 million"><div class="a"></div><div class="b"></div><div class="c"></div><div class="d">Goodwill $221.6M</div></div>
+        <div class="legend"><span style="color:var(--accent)">■ Tech $6.0M</span><span style="color:#7cc3b2">■ Customers $39.0M</span><span style="color:#4fa896">■ Trademarks $19.0M</span><span style="color:#5fd1b8">■ Goodwill $221.6M</span></div></div>
+      <div class="card comp"><span class="tag">Blackstone → Rover · Closed Feb 2024</span><div class="mult">≈ 10.6× revenue</div><p>~$2.3B on ~$218M revenue. Pet-services marketplaces command premium multiples.</p>
+        <p style="margin-top:10px;color:#fff"><b>PawPrime sits deliberately at the intersection of those two deals</b> — a pet-services marketplace in health, designed to be bought.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <span class="eyebrow">Roadmap &amp; risks</span>
+    <h2>Three phases, three gates</h2>
+    <p class="lead">Capital is released against measured results, not milestones on a slide.</p>
+    <div class="road">
+      <div class="ph"><span class="when">Phase 01 · 0–6 months</span><h3>Atlanta pilot</h3><p>~25 providers, two services, one metro.</p><div class="gate">Gate 1: provider utilisation at target</div></div>
+      <div class="ph"><span class="when">Phase 02 · 6–18 months</span><h3>Integration</h3><p>First partner pharmacy API; membership scaled.</p><div class="gate">Gate 2: Rx attachment ≥30%; 12-mo retention ≥60%</div></div>
+      <div class="ph"><span class="when">Phase 03 · 18–36 months</span><h3>Expand &amp; partner</h3><p>3–5 metros; formal partnership → acquisition talks.</p><div class="gate">Gate 3: measured lift in partner net sales / active customer</div></div>
+    </div>
+
+    <h3 style="font-size:26px;margin:54px 0 18px">What could go wrong — and how we handle it</h3>
+    <div class="tblwrap">
+    <table class="tbl risk">
+      <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr><td>VCPR &amp; telehealth rules</td><td>Home exam establishes VCPR; in Georgia we file the Affidavit of Intent (new, June 2026).</td></tr>
+        <tr><td>Prescription authority</td><td>Only licensed vets on the network write; fulfilment stays with the partner’s pharmacy.</td></tr>
+        <tr><td>Contractor classification</td><td>Software-and-scheduling model; separate structure for an employee-style buyer (Petco).</td></tr>
+        <tr><td>Records &amp; privacy</td><td>Owner-owned record, explicit consent, audited access; defined retention rules.</td></tr>
+        <tr><td>One-partner dependency</td><td>Keep two buyers engaged; retain direct brand and membership as standalone value.</td></tr>
+        <tr><td>Route density &amp; leakage</td><td>City-by-city launch with density thresholds; hold both sides.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="ask" id="ask">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--accent)">The ask</span>
+    <div class="amt">~$6M</div>
+    <h2>One pilot partner &amp; the six numbers.</h2>
+    <p class="lead">Seed funding takes the Atlanta pilot to Gate 2. From there, the metrics — not the pitch — carry the acquisition conversation.</p>
+    <a class="btn btn-p" href="mailto:investors@pawprime.example?subject=PawPrime%20investor%20inquiry">Request the full deck</a>
+    <div class="contact"><span style="color:var(--dark-muted);font-size:14px">Replace the contact address above with the team’s real investor email before publishing.</span></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#d6e6e2">PawPrime</b> — The home care layer for pet health.</p>
+    <p>All pricing, take-rate, membership, unit-economics and five-year financial figures are planning assumptions, not forecasts or verified benchmarks; the Atlanta pilot exists to replace them with measured values. TAM/SAM are derived estimates. This page is informational and is not an offer to sell securities.</p>
+    <p>Market and comparable-transaction data: APPA (Mar 2026); Chewy investor materials and Q2 FY2026 10-Q (Apr 2026); Petco Q1 2026 results; Blackstone (Feb 2024); Mordor Intelligence; Dataintelo; AVMA; GVMA; VVCA. Accessed 6 October 2026. Re-verify Chewy’s Autoship share (84.6%) and the Modern Animal purchase-price allocation before external distribution.</p>
+  </div>
+</footer>
+
+</body>
+</html>
